@@ -30,9 +30,10 @@ body{
     flex-wrap: wrap;
     justify-content:center;
     align-items: center;
+    position: relative;
 }
 
-.all-cards ul{
+/*.all-cards ul{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -41,42 +42,35 @@ body{
 .all-cards ul li{
     list-style-type: none;
     padding: 14px;
-}
+}*/
 
 .card{
     width: 117px;
     height: 146px;
-    margin: 10px;
     border-radius: 5px;
     position: relative;
-}
-
-.face {
-    width: 100%;
-    height: 100%;
-    background-color: #a7e9af;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    backface-visibility: hidden;
     transition: all 2s;
     transform-style: preserve-3d;
+}
+
+  .front-face,
+   .back-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    background-color: #a7e9af;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   }
   
   .back-face {
-    transition: transform 2s;
     transform: rotateY(180deg);
   }
   
-  .card:hover .back-face {
-    transform: rotateY(0deg);
-  }
-  
-  .card:hover .front-face {
-    transform: rotateY(-180deg);
+  .card.apereca{
+    transform: rotateY(180deg);
   }
 /*
 .virada{
@@ -84,9 +78,7 @@ body{
     transform: rotateY(180deg);
 }*/
 
-.desapareca img{
-    display: none;
-}
+
 
 @media(max-width: 335px){
     .titulo{
@@ -97,18 +89,6 @@ body{
 
     .all{
         padding: 0;
-    }
-
-    .all-cards{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .all-cards ul{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 }
 
