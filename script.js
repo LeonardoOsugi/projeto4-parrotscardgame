@@ -5,6 +5,17 @@ while(opcao % 2 !== 0 || opcao < 4 || opcao > 14){
 }
 
 
+const lista = document.querySelector("ul");
+const globalCards = lista.childNodes;
+
+globalCards.sort(comparador);
+console.log(globalCards);
+
+function comparador() {
+    return Math.random() - 0.5;
+  }
+
+
 function virado(seletor) {
-    seletor.classList.add('virada');
+    
 }
