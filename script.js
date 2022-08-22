@@ -55,11 +55,16 @@ for(i = 0; i< opcao; i++){
 let checkao = false;
 let firstCard = "";
 let secondCard = "";
-
+let jogadas = 0;
 function virado(seletor) {
-    if(seletor === firstCard) return;
-
+    if(seletor === firstCard){
+        return;
+    }
+    if(secondCard !== ""){
+        return;
+    }
     seletor.classList.add('apareca');
+    jogadas++;
 
     if(!checkao){
         checkao = true;
@@ -79,14 +84,20 @@ function comparador(){
     if(firstCard.dataset.git === secondCard.dataset.git){
         firstCard.setAttribute("onclick", "");
         secondCard.setAttribute("onclick","");
+        firstCard = "";
+        secondCard = "";
+        cont++;
+        if(cont === opcao/2){
+            alert(`Você venceu com ${jogadas}`)
+        }
     }else{
         setTimeout(viradaReversa, 1000);
     }
-    firstCard = "";
-    secondCard = "";
 }
 
 function viradaReversa(){
     firstCard.classList.remove('apareca');
     secondCard.classList.remove('apareca');
+    firstCard = "";
+    secondCard = "";
 }
