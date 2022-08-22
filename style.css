@@ -21,8 +21,7 @@ body{
 .all{
     justify-content: center;
     align-items: center;
-    padding-right: 250px;
-    padding-left: 250px;
+    
 }
 
 .all-cards{
@@ -31,6 +30,9 @@ body{
     justify-content:center;
     align-items: center;
     position: relative;
+    margin: 0 auto;
+    gap: 34px;
+    max-width: 872px;
 }
 
 /*.all-cards ul{
@@ -38,7 +40,6 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 .all-cards ul li{
     list-style-type: none;
     padding: 14px;
@@ -49,7 +50,7 @@ body{
     height: 146px;
     border-radius: 5px;
     position: relative;
-    transition: all 2s;
+    transition: all 0.4s;
     transform-style: preserve-3d;
 }
 
@@ -64,14 +65,16 @@ body{
     background-color: #a7e9af;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   }
+
+  .card.apareca{
+    transform: rotateY(180deg);
+  }
   
   .back-face {
     transform: rotateY(180deg);
   }
   
-  .card.apereca{
-    transform: rotateY(180deg);
-  }
+
 /*
 .virada{
     transition: transform 2s;
@@ -91,4 +94,3 @@ body{
         padding: 0;
     }
 }
-
